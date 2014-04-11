@@ -20,7 +20,7 @@ Use of the Storyboard Segues is recommended. So don't forget to set KAWebViewCon
 
 ###Step 1
 Import the header file in the class you want to use KAWebViewController
-'#import KAWWebViewController'
+`#import KAWWebViewController`
 
 ###Step 2
 Currently there are two ways to fire off your KAWebViewController. Via a designated initializer:
