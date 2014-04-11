@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5308EC5A18F8169100B62723 /* KAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5308EC5818F8169100B62723 /* KAWebViewController.m */; };
+		5308EC5B18F8169100B62723 /* KAWebViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5308EC5918F8169100B62723 /* KAWebViewController.xcassets */; };
 		539B400018F4555C00A866F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B3FFF18F4555B00A866F2 /* Foundation.framework */; };
 		539B400218F4555C00A866F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400118F4555C00A866F2 /* CoreGraphics.framework */; };
 		539B400418F4555C00A866F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400318F4555C00A866F2 /* UIKit.framework */; };
@@ -14,13 +16,13 @@
 		539B400C18F4555C00A866F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B400B18F4555C00A866F2 /* main.m */; };
 		539B401018F4555C00A866F2 /* KAWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B400F18F4555C00A866F2 /* KAWAppDelegate.m */; };
 		539B401318F4555C00A866F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539B401118F4555C00A866F2 /* Main.storyboard */; };
-		539B401618F4555C00A866F2 /* KAWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B401518F4555C00A866F2 /* KAWViewController.m */; };
 		539B401818F4555C00A866F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539B401718F4555C00A866F2 /* Images.xcassets */; };
 		539B401F18F4555C00A866F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B401E18F4555C00A866F2 /* XCTest.framework */; };
 		539B402018F4555C00A866F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B3FFF18F4555B00A866F2 /* Foundation.framework */; };
 		539B402118F4555C00A866F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400318F4555C00A866F2 /* UIKit.framework */; };
 		539B402918F4555C00A866F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 539B402718F4555C00A866F2 /* InfoPlist.strings */; };
 		539B402B18F4555C00A866F2 /* KAWebViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B402A18F4555C00A866F2 /* KAWebViewControllerTests.m */; };
+		539B403618F567C200A866F2 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B403518F567C200A866F2 /* DemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5308EC5718F8169100B62723 /* KAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAWebViewController.h; sourceTree = "<group>"; };
+		5308EC5818F8169100B62723 /* KAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAWebViewController.m; sourceTree = "<group>"; };
+		5308EC5918F8169100B62723 /* KAWebViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KAWebViewController.xcassets; sourceTree = "<group>"; };
 		539B3FFC18F4555B00A866F2 /* KAWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539B3FFF18F4555B00A866F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		539B400118F4555C00A866F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +50,14 @@
 		539B400E18F4555C00A866F2 /* KAWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAWAppDelegate.h; sourceTree = "<group>"; };
 		539B400F18F4555C00A866F2 /* KAWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAWAppDelegate.m; sourceTree = "<group>"; };
 		539B401218F4555C00A866F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		539B401418F4555C00A866F2 /* KAWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAWViewController.h; sourceTree = "<group>"; };
-		539B401518F4555C00A866F2 /* KAWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAWViewController.m; sourceTree = "<group>"; };
 		539B401718F4555C00A866F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		539B401D18F4555C00A866F2 /* KAWebViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KAWebViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		539B401E18F4555C00A866F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		539B402618F4555C00A866F2 /* KAWebViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KAWebViewControllerTests-Info.plist"; sourceTree = "<group>"; };
 		539B402818F4555C00A866F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		539B402A18F4555C00A866F2 /* KAWebViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KAWebViewControllerTests.m; sourceTree = "<group>"; };
+		539B403418F567C200A866F2 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		539B403518F567C200A866F2 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5308EC5618F8169100B62723 /* KAWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5308EC5718F8169100B62723 /* KAWebViewController.h */,
+				5308EC5818F8169100B62723 /* KAWebViewController.m */,
+				5308EC5918F8169100B62723 /* KAWebViewController.xcassets */,
+			);
+			path = KAWebViewController;
+			sourceTree = "<group>";
+		};
 		539B3FF318F4555B00A866F2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +127,13 @@
 		539B400518F4555C00A866F2 /* KAWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5308EC5618F8169100B62723 /* KAWebViewController */,
+				539B403918F5AF3A00A866F2 /* iPad */,
 				539B400E18F4555C00A866F2 /* KAWAppDelegate.h */,
 				539B400F18F4555C00A866F2 /* KAWAppDelegate.m */,
 				539B401118F4555C00A866F2 /* Main.storyboard */,
-				539B401418F4555C00A866F2 /* KAWViewController.h */,
-				539B401518F4555C00A866F2 /* KAWViewController.m */,
+				539B403418F567C200A866F2 /* DemoViewController.h */,
+				539B403518F567C200A866F2 /* DemoViewController.m */,
 				539B401718F4555C00A866F2 /* Images.xcassets */,
 				539B400618F4555C00A866F2 /* Supporting Files */,
 			);
@@ -150,6 +167,13 @@
 				539B402718F4555C00A866F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		539B403918F5AF3A00A866F2 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				539B401818F4555C00A866F2 /* Images.xcassets in Resources */,
+				5308EC5B18F8169100B62723 /* KAWebViewController.xcassets in Resources */,
 				539B400A18F4555C00A866F2 /* InfoPlist.strings in Resources */,
 				539B401318F4555C00A866F2 /* Main.storyboard in Resources */,
 			);
@@ -251,8 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				539B401018F4555C00A866F2 /* KAWAppDelegate.m in Sources */,
+				5308EC5A18F8169100B62723 /* KAWebViewController.m in Sources */,
 				539B400C18F4555C00A866F2 /* main.m in Sources */,
-				539B401618F4555C00A866F2 /* KAWViewController.m in Sources */,
+				539B403618F567C200A866F2 /* DemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +406,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KAWebViewController/KAWebViewController-Prefix.pch";
 				INFOPLIST_FILE = "KAWebViewController/KAWebViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,7 +421,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KAWebViewController/KAWebViewController-Prefix.pch";
 				INFOPLIST_FILE = "KAWebViewController/KAWebViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -457,6 +487,7 @@
 				539B403018F4555C00A866F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		539B403118F4555C00A866F2 /* Build configuration list for PBXNativeTarget "KAWebViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +496,7 @@
 				539B403318F4555C00A866F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
