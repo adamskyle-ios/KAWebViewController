@@ -1,4 +1,4 @@
-# KAWebViewController
+# KAWebViewController 0.2
  
 KAWebViewController is a view controller class for UIWebView. Currently, KAWebViewController only works in a UINavigationController.
 I never found a similar solution that suited my needs so I decided to write my own basic UIWebViewController Class.
@@ -16,21 +16,22 @@ Simply drag the KAWebViewController folder to your project. If this project evol
  
 ## Usage
 
-Use of the Storyboard Segues is recommended. So don't forget to set KAWebViewController as the custom class of your destination ViewController.
+Use of the Storyboard Segues is recommended. So don't forget to set KAWebViewController as the custom class of your destination ViewController. (Or KAWModalWebViewController if your using a modal segue)
 
 ###Step 1
+
 Import the header file in the class you want to use KAWebViewController
 `#import KAWWebViewController`
 
 ###Step 2
-Currently there are two ways to fire off your KAWebViewController. Via a designated initializer:
-`[[KAWebViewController alloc] initWithURL:yourNSURL];`
 
-Or via the setter (cleaner when used in prepareForSegue:):
+Fire of KAWebViewController via the setter (cleaner for use with prepareForSegue:):
 ```objc
 KAWebViewController *kaw = (KAWebViewController *)segue.destinationViewController;
 kaw.url = yourURL;
 ```
+
+For the modal segue, use `KAWModalWebViewController` instead. No need to import `KAWModalWebViewController`.
 
 Pushing the ViewController programmatically works, but it is not supported.
 
@@ -38,7 +39,6 @@ Pushing the ViewController programmatically works, but it is not supported.
 
 I do not know how far I want this project to go. 
 
-- Support Modal Segue (definitely!)
 - Automatically mimic the application UI. (Optional, via property?)
 - Improved activity center
 - Suggestions?
@@ -51,7 +51,8 @@ Fork and tinker to your own needs or submit a pull request. Keep in mind that I 
 You can always contact me via e-mail: kpe.adams@gmail.com
  
 ## History
- 
+
+- 12/4/2014: Modal Segue Added, Created ToolbarItems Class (0.2) 
 - 11/4/2014: Initial release (0.1)
  
 ## Credits
