@@ -51,9 +51,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2X-3l-bC4">
-                                <rect key="frame" x="135" y="309" width="50" height="30"/>
+                                <rect key="frame" x="139" y="309" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Google">
+                                <state key="normal" title="Modal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -76,17 +76,18 @@
                     <navigationItem key="navigationItem" title="KAWebViewController" id="73z-pK-f0F"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <segue destination="S7x-SN-srV" kind="push" identifier="Show Website" id="Jfv-gg-dmT"/>
+                        <segue destination="S7x-SN-srV" kind="modal" identifier="Show Website Modal" id="Jfv-gg-dmT"/>
+                        <segue destination="NiT-zC-Hqv" kind="push" identifier="Show Website Push" id="VRg-qx-wcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="172"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Modal Web View Controller-->
         <scene sceneID="Un3-J9-nh3">
             <objects>
-                <viewController id="S7x-SN-srV" customClass="KAWebViewController" sceneMemberID="viewController">
+                <viewController id="S7x-SN-srV" customClass="KAWModalWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vlc-l8-afo"/>
                         <viewControllerLayoutGuide type="bottom" id="wbE-qC-pQl"/>
@@ -100,7 +101,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0T-pQ-gxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="172"/>
+            <point key="canvasLocation" x="1379" y="-180"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="dWI-n7-1l8">
+            <objects>
+                <viewController id="NiT-zC-Hqv" customClass="KAWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0h-ZF-eWK"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfx-CS-hAH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4ON-JZ-IOY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ftt-wc-c2g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxg-7H-a3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1379" y="456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GBr-IY-4YB">

@@ -7,6 +7,7 @@
 //
 
 #import "KAWebViewController.h"
+#import "KAWToolbarItems.h"
 
 #define FORWARD_BUTTON @"KAWForward"
 #define BACK_BUTTON @"KAWBack"
@@ -15,16 +16,7 @@
 @interface KAWebViewController () <UIWebViewDelegate>
 
 @property (strong, nonatomic) UIWebView *webView;
-
-@property (strong, nonatomic) UIBarButtonItem *space;
-@property (strong, nonatomic) UIBarButtonItem *refreshButton;
-@property (strong, nonatomic) UIBarButtonItem *backButton;
-@property (strong, nonatomic) UIBarButtonItem *forwardButton;
-@property (strong, nonatomic) UIBarButtonItem *stopButton;
-@property (strong, nonatomic) UIBarButtonItem *actionButton;
-
-@property (strong, nonatomic) NSArray *toolBarItemsWhenLoading;
-@property (strong, nonatomic) NSArray *toolBarItemsWhenDoneLoading;
+@property (strong, nonatomic) KAWToolbarItems *toolbar;
 
 @end
 
@@ -41,106 +33,21 @@
 
 #pragma mark - Properties
 
-- (NSArray *)toolBarItemsWhenLoading
+- (UIWebView *)webView
 {
-    if (!_toolBarItemsWhenLoading) {
-        if (IPAD) {
-            _toolBarItemsWhenLoading = @[self.backButton,
-                                         self.forwardButton,
-                                         self.stopButton,
-                                         self.actionButton];
-        } else {
-            _toolBarItemsWhenLoading = @[self.backButton,
-                                         self.space,
-                                         self.forwardButton,
-                                         self.space,
-                                         self.stopButton,
-                                         self.space,
-                                         self.actionButton];
-        }
+    if (!_webView) {
+        _webView = [[UIWebView alloc] init];
     }
-    return _toolBarItemsWhenLoading;
+    return _webView;
 }
 
-- (NSArray *)toolBarItemsWhenDoneLoading
+- (KAWToolbarItems *)toolbar
 {
-    if (!_toolBarItemsWhenDoneLoading) {
-        if (IPAD) {
-            _toolBarItemsWhenDoneLoading = @[self.backButton,
-                                         self.forwardButton,
-                                         self.refreshButton,
-                                         self.actionButton];
-        } else {
-            _toolBarItemsWhenDoneLoading = @[self.backButton,
-                                         self.space,
-                                         self.forwardButton,
-                                         self.space,
-                                         self.refreshButton,
-                                         self.space,
-                                         self.actionButton];
-        }
+    if (!_toolbar) {
+        _toolbar = [[KAWToolbarItems alloc] initWithTarget:self];
+        [self setButtonActions];
     }
-    return _toolBarItemsWhenDoneLoading;
-}
-
-- (UIBarButtonItem *)space
-{
-    if (!_space) {
-        _space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    }
-    return _space;
-}
-
-- (UIBarButtonItem *)backButton
-{
-    if (!_backButton) {
-        _backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:BACK_BUTTON]
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self
-                                                      action:@selector(previousPage)];
-    }
-    return _backButton;
-}
-
-- (UIBarButtonItem *)forwardButton
-{
-    if (!_forwardButton) {
-        _forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:FORWARD_BUTTON]
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:self
-                                                         action:@selector(forwardPage)];
-    }
-    return _forwardButton;
-}
-
-- (UIBarButtonItem *)refreshButton
-{
-    if (!_refreshButton) {
-        _refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                       target:self
-                                                                       action:@selector(refreshPage)];
-    }
-    return _refreshButton;
-}
-
-- (UIBarButtonItem *)stopButton
-{
-    if (!_stopButton) {
-        _stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                    target:self
-                                                                    action:@selector(stopRefresh)];
-    }
-    return _stopButton;
-}
-
-- (UIBarButtonItem *)actionButton
-{
-    if (!_actionButton) {
-        _actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                      target:self
-                                                                      action:@selector(actionPressed)];
-    }
-    return _actionButton;
+    return _toolbar;
 }
 
 - (void)setUrl:(NSURL *)url
@@ -151,12 +58,13 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
 }
 
-- (UIWebView *)webView
+- (void)setButtonActions
 {
-    if (!_webView) {
-        _webView = [[UIWebView alloc] init];
-    }
-    return _webView;
+    self.toolbar.refreshButton.action = @selector(refreshPage);
+    self.toolbar.stopButton.action = @selector(stopRefresh);
+    self.toolbar.backButton.action = @selector(previousPage);
+    self.toolbar.forwardButton.action = @selector(forwardPage);
+    self.toolbar.actionButton.action = @selector(actionPressed);
 }
 
 #pragma mark - Target Actions
@@ -184,12 +92,11 @@
 
 - (void)actionPressed
 {
+    //needs some work
     NSArray *actionItems = @[self.webView.request.URL];
     UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:actionItems applicationActivities:nil];
     
     [self presentViewController:avc animated:YES completion:nil];
-    
-
 }
 
 #pragma mark - UIViewController Lifecycle
@@ -203,7 +110,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //for a snappy UI
     self.view = self.webView;
 }
 
@@ -211,8 +117,8 @@
 {
     [self setToolbarItemsForState:self.webView.loading];
     
-    self.backButton.enabled = self.webView.canGoBack ? YES : NO;
-    self.forwardButton.enabled = self.webView.canGoForward? YES : NO;
+    self.toolbar.backButton.enabled = self.webView.canGoBack ? YES : NO;
+    self.toolbar.forwardButton.enabled = self.webView.canGoForward? YES : NO;
     
     if (!IPAD) {
         if (self.navigationController.toolbar.hidden) {
@@ -225,17 +131,17 @@
 {
     if (loading) {
         if (!IPAD) {
-            self.toolbarItems = self.toolBarItemsWhenLoading;
+            self.toolbarItems = self.toolbar.toolBarItemsWhenLoading;
         } else {
-            self.navigationItem.rightBarButtonItems = self.toolBarItemsWhenLoading.reverseObjectEnumerator.allObjects;
+            self.navigationItem.rightBarButtonItems = self.toolbar.toolBarItemsWhenLoading.reverseObjectEnumerator.allObjects;
         }
         
     } else {
         
         if (!IPAD) {
-            self.toolbarItems = self.toolBarItemsWhenDoneLoading;
+            self.toolbarItems = self.toolbar.toolBarItemsWhenDoneLoading;
         } else {
-            self.navigationItem.rightBarButtonItems = self.toolBarItemsWhenDoneLoading.reverseObjectEnumerator.allObjects;
+            self.navigationItem.rightBarButtonItems = self.toolbar.toolBarItemsWhenDoneLoading.reverseObjectEnumerator.allObjects;
         }
         
         self.title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
@@ -245,6 +151,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
+    
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 

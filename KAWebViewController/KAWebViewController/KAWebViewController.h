@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KAWModalWebViewController.h"
+
+#define IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 
 @interface KAWebViewController : UIViewController
 
