@@ -1,7 +1,7 @@
 # KAWebViewController 0.2
  
-KAWebViewController is a view controller class for UIWebView. Currently, KAWebViewController only works in a UINavigationController.
-I never found a similar solution that suited my needs so I decided to write my own basic UIWebViewController Class.
+KAWebViewController is a view controller class for UIWebView. I never found a similar solution that suited my needs so I decided to write my own basic UIWebViewController Class. You can use KAWebViewController outside a navigation controller with the use of KAWModalWebViewController.
+
 
 Feel free to use this as base for your own UIWebView ViewController.
 This class currently supports:
@@ -16,7 +16,7 @@ Simply drag the KAWebViewController folder to your project. If this project evol
  
 ## Usage
 
-Use of the Storyboard Segues is recommended. So don't forget to set KAWebViewController as the custom class of your destination ViewController. (Or KAWModalWebViewController if your using a modal segue)
+!! Use of the Storyboard Segues is recommended. So don't forget to set KAWebViewController as the custom class of your destination ViewController. (Or KAWModalWebViewController if your using a modal segue)
 
 ###Step 1
 
