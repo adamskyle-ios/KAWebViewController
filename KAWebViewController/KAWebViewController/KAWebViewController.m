@@ -13,7 +13,7 @@
 #define BACK_BUTTON @"KAWBack"
 #define IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 
-@interface KAWebViewController () <UIWebViewDelegate>
+@interface KAWebViewController () <UIWebViewDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIWebView *webView;
 @property (strong, nonatomic) KAWToolbarItems *toolbar;
@@ -110,6 +110,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     self.view = self.webView;
 }
 

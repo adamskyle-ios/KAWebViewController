@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5308EC5A18F8169100B62723 /* KAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5308EC5818F8169100B62723 /* KAWebViewController.m */; };
-		5308EC5B18F8169100B62723 /* KAWebViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5308EC5918F8169100B62723 /* KAWebViewController.xcassets */; };
 		53466B5618F9A50400F610E9 /* KAWToolbarItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 53466B5518F9A50400F610E9 /* KAWToolbarItems.m */; };
+		53750A9D18FC04870094BED7 /* KAWebViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53750A9C18FC04870094BED7 /* KAWebViewController.xcassets */; };
 		539B400018F4555C00A866F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B3FFF18F4555B00A866F2 /* Foundation.framework */; };
 		539B400218F4555C00A866F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400118F4555C00A866F2 /* CoreGraphics.framework */; };
 		539B400418F4555C00A866F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400318F4555C00A866F2 /* UIKit.framework */; };
@@ -40,9 +40,9 @@
 /* Begin PBXFileReference section */
 		5308EC5718F8169100B62723 /* KAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAWebViewController.h; sourceTree = "<group>"; };
 		5308EC5818F8169100B62723 /* KAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAWebViewController.m; sourceTree = "<group>"; };
-		5308EC5918F8169100B62723 /* KAWebViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KAWebViewController.xcassets; sourceTree = "<group>"; };
 		53466B5418F9A50400F610E9 /* KAWToolbarItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAWToolbarItems.h; sourceTree = "<group>"; };
 		53466B5518F9A50400F610E9 /* KAWToolbarItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAWToolbarItems.m; sourceTree = "<group>"; };
+		53750A9C18FC04870094BED7 /* KAWebViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KAWebViewController.xcassets; sourceTree = "<group>"; };
 		539B3FFC18F4555B00A866F2 /* KAWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539B3FFF18F4555B00A866F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		539B400118F4555C00A866F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,13 +93,13 @@
 		5308EC5618F8169100B62723 /* KAWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				53750A9C18FC04870094BED7 /* KAWebViewController.xcassets */,
 				53E6928E18F9696500F67472 /* KAWModalWebViewController.h */,
 				53E6928F18F9696500F67472 /* KAWModalWebViewController.m */,
 				5308EC5718F8169100B62723 /* KAWebViewController.h */,
 				5308EC5818F8169100B62723 /* KAWebViewController.m */,
 				53466B5418F9A50400F610E9 /* KAWToolbarItems.h */,
 				53466B5518F9A50400F610E9 /* KAWToolbarItems.m */,
-				5308EC5918F8169100B62723 /* KAWebViewController.xcassets */,
 			);
 			path = KAWebViewController;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				539B401818F4555C00A866F2 /* Images.xcassets in Resources */,
-				5308EC5B18F8169100B62723 /* KAWebViewController.xcassets in Resources */,
+				53750A9D18FC04870094BED7 /* KAWebViewController.xcassets in Resources */,
 				539B400A18F4555C00A866F2 /* InfoPlist.strings in Resources */,
 				539B401318F4555C00A866F2 /* Main.storyboard in Resources */,
 			);

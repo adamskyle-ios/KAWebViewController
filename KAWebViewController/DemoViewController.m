@@ -24,6 +24,7 @@
     _url = url;
     
     if (self.modal) {
+        self.modal = NO;
         [self performSegueWithIdentifier:@"Show Website Modal" sender:self];
     } else {
         [self performSegueWithIdentifier:@"Show Website Push" sender:self];

@@ -9,8 +9,11 @@
 #import "KAWToolbarItems.h"
 #import "KAWebViewController.h"
 
-#define FORWARD_BUTTON @"KAWForward"
-#define BACK_BUTTON @"KAWBack"
+typedef NS_ENUM(NSInteger, UIToolBarButtonType)
+{
+    UIToolBarButtonTypeBack,
+    UIToolBarButtonTypeForward,
+};
 
 @interface KAWToolbarItems ()
 
@@ -84,7 +87,7 @@
 - (UIBarButtonItem *)backButton
 {
     if (!_backButton) {
-        _backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:BACK_BUTTON]
+        _backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[self buttonForType:UIToolBarButtonTypeBack]]
                                                        style:UIBarButtonItemStylePlain
                                                       target:self.target
                                                       action:nil];
@@ -95,7 +98,7 @@
 - (UIBarButtonItem *)forwardButton
 {
     if (!_forwardButton) {
-        _forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:FORWARD_BUTTON]
+        _forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[self buttonForType:UIToolBarButtonTypeForward]]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self.target
                                                          action:nil];
@@ -131,6 +134,17 @@
                                                                       action:nil];
     }
     return _actionButton;
+}
+
+#define SYSTEM_VERSION_BELOW_IOS7 ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending)
+
+- (NSString *)buttonForType:(NSInteger)type
+{
+    if (type == UIToolBarButtonTypeForward) {
+        return SYSTEM_VERSION_BELOW_IOS7 ? @"KAW6Forward" : @"KAWForward";
+    } else {
+        return SYSTEM_VERSION_BELOW_IOS7 ? @"KAW6Back" : @"KAWBack";
+    }
 }
 
 @end
