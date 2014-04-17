@@ -9,7 +9,7 @@
 #import "DemoViewController.h"
 #import "KAWebViewController.h"
 
-@interface DemoViewController ()
+@interface DemoViewController () 
 
 @property (strong, nonatomic) NSURL *url;
 

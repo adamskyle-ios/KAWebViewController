@@ -138,7 +138,6 @@
         }
         
     } else {
-        
         if (!IPAD) {
             self.toolbarItems = self.toolbar.toolBarItemsWhenDoneLoading;
         } else {

@@ -9,12 +9,6 @@
 #import "KAWToolbarItems.h"
 #import "KAWebViewController.h"
 
-typedef NS_ENUM(NSInteger, UIToolBarButtonType)
-{
-    UIToolBarButtonTypeBack,
-    UIToolBarButtonTypeForward,
-};
-
 @interface KAWToolbarItems ()
 
 @property (nonatomic) id target;
@@ -34,47 +28,7 @@ typedef NS_ENUM(NSInteger, UIToolBarButtonType)
     return self;
 }
 
-- (NSArray *)toolBarItemsWhenLoading
-{
-    if (!_toolBarItemsWhenLoading) {
-        if (IPAD) {
-            _toolBarItemsWhenLoading = @[self.backButton,
-                                         self.forwardButton,
-                                         self.stopButton,
-                                         self.actionButton];
-        } else {
-            _toolBarItemsWhenLoading = @[self.backButton,
-                                         self.space,
-                                         self.forwardButton,
-                                         self.space,
-                                         self.stopButton,
-                                         self.space,
-                                         self.actionButton];
-        }
-    }
-    return _toolBarItemsWhenLoading;
-}
-
-- (NSArray *)toolBarItemsWhenDoneLoading
-{
-    if (!_toolBarItemsWhenDoneLoading) {
-        if (IPAD) {
-            _toolBarItemsWhenDoneLoading = @[self.backButton,
-                                             self.forwardButton,
-                                             self.refreshButton,
-                                             self.actionButton];
-        } else {
-            _toolBarItemsWhenDoneLoading = @[self.backButton,
-                                             self.space,
-                                             self.forwardButton,
-                                             self.space,
-                                             self.refreshButton,
-                                             self.space,
-                                             self.actionButton];
-        }
-    }
-    return _toolBarItemsWhenDoneLoading;
-}
+#define SYSTEM_VERSION_BELOW_IOS7 ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending)
 
 - (UIBarButtonItem *)space
 {
@@ -87,10 +41,18 @@ typedef NS_ENUM(NSInteger, UIToolBarButtonType)
 - (UIBarButtonItem *)backButton
 {
     if (!_backButton) {
-        _backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[self buttonForType:UIToolBarButtonTypeBack]]
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self.target
-                                                      action:nil];
+        if (SYSTEM_VERSION_BELOW_IOS7) {
+            _backButton = [[UIBarButtonItem alloc] initWithTitle:@"◀︎"
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self.target
+                                                          action:nil];
+        } else {
+            _backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"KAWBack"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self.target
+                                                          action:nil];
+        }
+       
     }
     return _backButton;
 }
@@ -98,10 +60,17 @@ typedef NS_ENUM(NSInteger, UIToolBarButtonType)
 - (UIBarButtonItem *)forwardButton
 {
     if (!_forwardButton) {
-        _forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[self buttonForType:UIToolBarButtonTypeForward]]
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:self.target
-                                                         action:nil];
+        if (SYSTEM_VERSION_BELOW_IOS7) {
+            _forwardButton = [[UIBarButtonItem alloc] initWithTitle:@"▶︎"
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self.target
+                                                             action:nil];
+        } else {
+            _forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"KAWForward"]
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self.target
+                                                             action:nil];
+        }
     }
     return _forwardButton;
 }
@@ -136,15 +105,46 @@ typedef NS_ENUM(NSInteger, UIToolBarButtonType)
     return _actionButton;
 }
 
-#define SYSTEM_VERSION_BELOW_IOS7 ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending)
-
-- (NSString *)buttonForType:(NSInteger)type
+- (NSArray *)toolBarItemsWhenLoading
 {
-    if (type == UIToolBarButtonTypeForward) {
-        return SYSTEM_VERSION_BELOW_IOS7 ? @"KAW6Forward" : @"KAWForward";
-    } else {
-        return SYSTEM_VERSION_BELOW_IOS7 ? @"KAW6Back" : @"KAWBack";
+    if (!_toolBarItemsWhenLoading) {
+        if (IPAD) {
+            _toolBarItemsWhenLoading = @[self.backButton,
+                                         self.forwardButton,
+                                         self.stopButton,
+                                         self.actionButton];
+        } else {
+            _toolBarItemsWhenLoading = @[self.backButton,
+                                         self.space,
+                                         self.forwardButton,
+                                         self.space,
+                                         self.stopButton,
+                                         self.space,
+                                         self.actionButton];
+        }
     }
+    return _toolBarItemsWhenLoading;
+}
+
+- (NSArray *)toolBarItemsWhenDoneLoading
+{
+    if (!_toolBarItemsWhenDoneLoading) {
+        if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+            return @[self.backButton,
+                      self.forwardButton,
+                      self.refreshButton,
+                      self.actionButton];
+        } else {
+            return @[self.backButton,
+                     self.space,
+                     self.forwardButton,
+                     self.space,
+                     self.refreshButton,
+                     self.space,
+                     self.actionButton];
+        }
+    }
+    return _toolBarItemsWhenDoneLoading;
 }
 
 @end
