@@ -10,7 +10,6 @@
 		5308EC5A18F8169100B62723 /* KAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5308EC5818F8169100B62723 /* KAWebViewController.m */; };
 		53466B5618F9A50400F610E9 /* KAWToolbarItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 53466B5518F9A50400F610E9 /* KAWToolbarItems.m */; };
 		53750A9D18FC04870094BED7 /* KAWebViewController.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53750A9C18FC04870094BED7 /* KAWebViewController.xcassets */; };
-		538A67B51945D75A004727F5 /* KAWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A67B41945D75A004727F5 /* KAWebViewController.swift */; };
 		539B400018F4555C00A866F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B3FFF18F4555B00A866F2 /* Foundation.framework */; };
 		539B400218F4555C00A866F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400118F4555C00A866F2 /* CoreGraphics.framework */; };
 		539B400418F4555C00A866F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539B400318F4555C00A866F2 /* UIKit.framework */; };
@@ -44,7 +43,6 @@
 		53466B5418F9A50400F610E9 /* KAWToolbarItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAWToolbarItems.h; sourceTree = "<group>"; };
 		53466B5518F9A50400F610E9 /* KAWToolbarItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAWToolbarItems.m; sourceTree = "<group>"; };
 		53750A9C18FC04870094BED7 /* KAWebViewController.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KAWebViewController.xcassets; sourceTree = "<group>"; };
-		538A67B41945D75A004727F5 /* KAWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAWebViewController.swift; sourceTree = "<group>"; };
 		539B3FFC18F4555B00A866F2 /* KAWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539B3FFF18F4555B00A866F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		539B400118F4555C00A866F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,18 +104,11 @@
 			path = KAWebViewController;
 			sourceTree = "<group>";
 		};
-		538A67B61945D761004727F5 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				538A67B41945D75A004727F5 /* KAWebViewController.swift */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
 		539B3FF318F4555B00A866F2 = {
 			isa = PBXGroup;
 			children = (
-				539B400518F4555C00A866F2 /* KAWebViewController */,
+				5308EC5618F8169100B62723 /* KAWebViewController */,
+				539B400518F4555C00A866F2 /* Example */,
 				539B402418F4555C00A866F2 /* KAWebViewControllerTests */,
 				539B3FFE18F4555B00A866F2 /* Frameworks */,
 				539B3FFD18F4555B00A866F2 /* Products */,
@@ -144,11 +135,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		539B400518F4555C00A866F2 /* KAWebViewController */ = {
+		539B400518F4555C00A866F2 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				538A67B61945D761004727F5 /* Swift */,
-				5308EC5618F8169100B62723 /* KAWebViewController */,
 				539B403918F5AF3A00A866F2 /* iPad */,
 				539B400E18F4555C00A866F2 /* KAWAppDelegate.h */,
 				539B400F18F4555C00A866F2 /* KAWAppDelegate.m */,
@@ -158,7 +147,7 @@
 				539B401718F4555C00A866F2 /* Images.xcassets */,
 				539B400618F4555C00A866F2 /* Supporting Files */,
 			);
-			path = KAWebViewController;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		539B400618F4555C00A866F2 /* Supporting Files */ = {
@@ -245,6 +234,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Kyle Adams";
 				TargetAttributes = {
+					539B3FFB18F4555B00A866F2 = {
+						DevelopmentTeam = ZKWNKALY9F;
+					};
 					539B401C18F4555C00A866F2 = {
 						TestTargetID = 539B3FFB18F4555B00A866F2;
 					};
@@ -301,7 +293,6 @@
 				53466B5618F9A50400F610E9 /* KAWToolbarItems.m in Sources */,
 				5308EC5A18F8169100B62723 /* KAWebViewController.m in Sources */,
 				539B400C18F4555C00A866F2 /* main.m in Sources */,
-				538A67B51945D75A004727F5 /* KAWebViewController.swift in Sources */,
 				539B403618F567C200A866F2 /* DemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,9 +419,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KAWebViewController/KAWebViewController-Prefix.pch";
-				INFOPLIST_FILE = "KAWebViewController/KAWebViewController-Info.plist";
+				GCC_PREFIX_HEADER = "Example/KAWebViewController-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/KAWebViewController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,9 +438,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KAWebViewController/KAWebViewController-Prefix.pch";
-				INFOPLIST_FILE = "KAWebViewController/KAWebViewController-Info.plist";
+				GCC_PREFIX_HEADER = "Example/KAWebViewController-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/KAWebViewController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
