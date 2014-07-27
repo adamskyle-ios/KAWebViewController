@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
         :git => 'https://github.com/adamskyle/KAWebViewController.git',
         :tag => s.version.to_s
     }
+    s.platform          = :ios
     s.source_files      = 'KAWebViewController/*.{m,h}'
     s.requires_arc      = true
 
