@@ -104,7 +104,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.toolbar.tintColor = self.navigationController.navigationBar.tintColor;
+    self.navigationController.toolbar.barTintColor = self.navigationController.navigationBar.tintColor;
 }
 
 - (void)viewDidAppear:(BOOL)animated

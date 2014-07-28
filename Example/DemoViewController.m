@@ -51,7 +51,6 @@
     self.url = [NSURL URLWithString:urlString];
 }
 
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
