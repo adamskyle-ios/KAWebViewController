@@ -12,7 +12,12 @@ This class currently supports:
 
 ## Installation
  
-Simply drag the KAWebViewController folder to your project. If this project evolves, I will gladly support CocoaPods installation.
+####Manual
+Simply drag the KAWebViewController folder to your project.
+
+####CocoaPods
+Add the line `pod 'KAWebViewController', '~> 0.2'` to your Podfile.
+
  
 ## Usage
 
