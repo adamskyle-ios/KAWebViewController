@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name              = 'KAWebViewController'
-    s.version           = '0.2.0'
+    s.version           = '0.2.1'
     s.summary           = 'A UIWebView ViewController to be used with a UINavigationController or on its own as a modal segue'
     s.homepage          = 'https://github.com/adamskyle/KAWebViewController'
     s.license           = {
