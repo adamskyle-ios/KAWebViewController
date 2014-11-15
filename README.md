@@ -25,12 +25,12 @@ Add the line `pod 'KAWebViewController', '~> 0.2'` to your Podfile.
 
 ###Step 1
 
-Import the header file in the class you want to use KAWebViewController
-`#import KAWWebViewController`
+Import the header file for the class you want to use. Example:
+`#import <KAWebViewController/KAWebViewController.h>`
 
 ###Step 2
 
-Fire of KAWebViewController via the setter (cleaner for use with prepareForSegue:):
+Fire off KAWebViewController via the setter (cleaner for use with prepareForSegue:):
 ```objc
 KAWebViewController *kaw = (KAWebViewController *)segue.destinationViewController;
 kaw.url = yourURL;
